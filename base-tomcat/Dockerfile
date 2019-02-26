@@ -1,0 +1,10 @@
+FROM registry:5000/jenkins/base-jre:1.8.0_77
+
+ADD tomcat.tgz /opt/
+
+ENV CATALINA_HOME=/opt/tomcat
+ENV PATH=$CATALINA_HOME/bin:$PATH
+
+EXPOSE 9010
+
+CMD ["catalina.sh", "run"]
